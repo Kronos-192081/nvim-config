@@ -11,5 +11,12 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+vim.api.nvim_exec([[
+  autocmd BufNewFile *.cpp 0r ~/.config/nvim/templates/cptemplate.cpp
+]], false)
+
+vim.api.nvim_exec([[autocmd BufWinEnter * setlocal modifiable]], false)
+-- vim.bo.modifiable = true
+                        
 require("vim-options")
 require("lazy").setup("plugins")
