@@ -4,6 +4,10 @@ vim.api.nvim_set_hl(0, 'LineNr', { fg='yellow', bold=true })
 vim.cmd("set expandtab")
 vim.cmd("set tabstop=4")
 vim.cmd("set shiftwidth=4")
+-- Enable autoindent and smartindent
+vim.o.autoindent = true
+vim.o.smartindent = true
+
 
 vim.keymap.set('n', '<c-k>', ':wincmd k<CR>')
 vim.keymap.set('n', '<c-j>', ':wincmd j<CR>')
